@@ -102,3 +102,15 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Server node_modules
+/server/node_modules/
+
+# Client node_modules
+/client/node_modules/
+
+# Client build file
+/client/build/
+
+# Random stuff
+randomStuff
