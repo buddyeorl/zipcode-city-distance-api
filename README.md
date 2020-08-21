@@ -2,7 +2,7 @@
 A simple free no restrictions nodejs app to calculate the distance between zip codes
 
 ## query: 
-/api/getDistance&zipcode1={zipcode}&zipcode2={zipcode}&unit=M
+/api/getDistance&zipcode1={zipcode}&zipcode2={zipcode}&unit={M}
 
 queries:
 * zipcode1: type int 
