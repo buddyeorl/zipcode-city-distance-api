@@ -14,26 +14,26 @@ example:
 you will get an object response as follows:
 ```javascript
 {
-"message": "completed your request",
-"zipcode1": {
-"geoId": 98006,
-"aLand": 27737341,
-"aWater": 1886298,
-"aLandSQMI": 10.709,
-"aWaterSQMI": 0.728,
-"lat": 47.557627,
-"lon": -122.151005
-},
-"zipcode2": {
-"geoId": 33014,
-"aLand": 15983675,
-"aWater": 2690856,
-"aLandSQMI": 6.171,
-"aWaterSQMI": 1.039,
-"lat": 25.903098,
-"lon": -80.302673
-},
-"distance": 2710.6371929140273
+    "message": "completed your request",
+    "zipcode1": {
+                    "geoId": 98006,
+                    "aLand": 27737341,
+                    "aWater": 1886298,
+                    "aLandSQMI": 10.709,
+                    "aWaterSQMI": 0.728,
+                    "lat": 47.557627,
+                    "lon": -122.151005
+    },
+    "zipcode2": {
+                    "geoId": 33014,
+                    "aLand": 15983675,
+                    "aWater": 2690856,
+                    "aLandSQMI": 6.171,
+                    "aWaterSQMI": 1.039,
+                    "lat": 25.903098,
+                    "lon": -80.302673
+    },
+    "distance": 2710.6371929140273
 }
 ```
 
