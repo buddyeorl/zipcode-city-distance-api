@@ -1,15 +1,15 @@
-# zipCodeDistance
+# zip code distance
 A simple free no restrictions nodejs app to calculate the distance between zip codes
 
-# to query a distance between two us zipcodes using its latitude and longitud (see calculateDistance.js and 2019 cta nation data in zipData folder), 
-https://zipcodedistance.herokuapp.com/api/getDistance&zipcode1={zipcode}&zipcode2={zipcode}
+# to query the distance between two US zip codes using their latitude and longitud (see calculateDistance.js and 2019 cta nation data in zipData folder), 
+/api/getDistance&zipcode1={zipcode}&zipcode2={zipcode}
 
 queries:
 zipcode1: type int 
 zipcode2: type int
 
 example:
-[distance between zipcode 98006 and 33014](https://zipcodedistance.herokuapp.com/api/getDistance&zipcode1=98006&zipcode2=33014 "distance between zipcode 98006 and 33014")
+[https://zipcodedistance.herokuapp.com/api/getDistance&zipcode1=98006&zipcode2=33014](https://zipcodedistance.herokuapp.com/api/getDistance&zipcode1=98006&zipcode2=33014 "distance between zipcode 98006 and 33014")
 
 you will get an object response as follows:
 ```javascript
