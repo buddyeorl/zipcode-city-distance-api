@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
             distance: calculateDistance(zipCodes[req.query.zipcode1], zipCodes[req.query.zipcode2])
         })
     } else {
-        res.send('not valid query')
+        res.send({ error: 'not valid query or zip code found' })
     }
 
 });
