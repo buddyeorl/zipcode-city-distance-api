@@ -16,7 +16,7 @@ const util = require('util');
 const app = express();
 
 //set port for server
-app.set('port', (process.env.Port || 3002));
+app.set('port', (process.env.PORT || 3002));
 
 //use CORS
 //app.use(cors())
