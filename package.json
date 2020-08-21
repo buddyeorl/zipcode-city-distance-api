@@ -1,0 +1,29 @@
+{
+  "name": "zip-code-distance",
+  "version": "1.0.0",
+  "description": "Simple api to get the distance between 2 zipcodes and the corresponding zipcode data",
+  "main": "./server/app.js",
+  "scripts": {
+    "test": "cd server && node app.js",
+    "start": "cd server && node app.js",
+    "heroku-postbuild": "cd server && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buddyeorl/zipCodeDistance.git"
+  },
+  "keywords": [
+    "zipcode",
+    "distance",
+    "zipcode",
+    "latitude",
+    "zipcode",
+    "longitude"
+  ],
+  "author": "A. Lizarraga",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/buddyeorl/zipCodeDistance/issues"
+  },
+  "homepage": "https://github.com/buddyeorl/zipCodeDistance#readme"
+}
