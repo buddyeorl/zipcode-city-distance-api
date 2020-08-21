@@ -17,7 +17,7 @@ example:
 [https://zipcodedistance.herokuapp.com/api/getDistance?zipcode1=98006&zipcode2=33014&unit=M](https://zipcodedistance.herokuapp.com/api/getDistance?zipcode1=98006&zipcode2=33014&unit=M)
 
 
-you will get an object response as follows:
+you will get a JSON object:
 ```javascript
 {
     "message": "completed your request",
