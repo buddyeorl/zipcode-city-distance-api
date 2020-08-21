@@ -14,7 +14,8 @@ queries:
 # 
 
 example:
-[https://zipcodedistance.herokuapp.com/api/getDistance&zipcode1=98006&zipcode2=33014&unit=M](https://zipcodedistance.herokuapp.com/api/getDistance&zipcode1=98006&zipcode2=33014&unit=M "distance between zipcode 98006 and 33014")
+[https://zipcodedistance.herokuapp.com/api/getDistance?zipcode1=98006&zipcode2=33014&unit=M](https://zipcodedistance.herokuapp.com/api/getDistance?zipcode1=98006&zipcode2=33014&unit=M)
+
 
 you will get an object response as follows:
 ```javascript
