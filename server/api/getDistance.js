@@ -4,11 +4,11 @@ const bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 
-//importing zipCode data file
+// importing zipCode data file
 let zipCodes = require('../allZipCodes').zipCodes;
 zipCodes = JSON.parse(zipCodes);
 
-//importing calculate distance function
+// importing calculate distance function
 const calculateDistance = require('../helper/calculateDistance').calculateDistance;
 
 //returns all equipments in the db
