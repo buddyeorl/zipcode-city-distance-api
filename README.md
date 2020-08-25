@@ -231,6 +231,7 @@ you will get a JSON object:
 * get distance between two cities, with no state query - completed 08/25/2020
 * get the distance between two cities including state query - completed 08/25/2020
 * get the distance between two cities as per their lat and lon and not by their zipcode
+* add radius functionality for zipcodes or cities
 * add international functionality
 * add not found zipcodes error- completed 08/22/2020
 * add not found city error- completed 08/25/2020
