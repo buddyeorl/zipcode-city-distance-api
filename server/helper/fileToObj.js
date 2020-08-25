@@ -196,4 +196,26 @@ async function makeCityDataFile() {
 //makeCityDataFile();
 
 
-
+{
+    "message": "completed your request",
+        "data": [
+            {
+                "lat": 40.465434,
+                "lon": -78.391752,
+                "state": {
+                    "code": "42",
+                    "short": "PA"
+                },
+                "zipCode": "16602"
+            },
+            {
+                "lat": 40.465434,
+                "lon": -78.391752,
+                "state": {
+                    "code": "42",
+                    "short": "PA"
+                },
+                "zipCode": "16648"
+            }
+        ]
+}

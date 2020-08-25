@@ -1,12 +1,12 @@
 # zip code distance
 A simple free no restrictions nodejs app to calculate the distance between zip codes
 
-## query: 
+## Get the distance between zipcodes: 
 /api/getDistance/zipcode&zipcode1={zipcode}&zipcode2={zipcode}&unit={M}
 
 queries:
-* zipcode1: type int 
-* zipcode2: type int
+* zipcode1: type str
+* zipcode2: type str
 * unit: type char
 
 ** valid units are M for miles, K for kilometer, N for nautical, if unit doesn't match any of the options it will calculate distance in miles as default
@@ -112,13 +112,101 @@ you will get a JSON object:
     "distance": 2710.6371929140273
 }
 ```
+## Get a zip code info including cities covered by that zipcode: 
+/api/getInfo?zipcode={zipcode}
+
+queries:
+* zipcode: type str
+
+example:
+[https://zipcodedistance.herokuapp.com/api/getInfo?zipcode=98006](https://zipcodedistance.herokuapp.com/api/getInfo?zipcode=98006)
+
+
+you will get a JSON object:
+```javascript
+{
+    "message": "completed your request",
+        "data": {
+        "state": {
+            "code": "53",
+            "short": "WA"
+        },
+        "location": {
+            "lat": 47.557627,
+            "lon": -122.151005,
+            "aLand": 27737341,
+            "aWater": 1886298,
+            "aLandSQMI": 10.709,
+            "aWaterSQMI": 0.728
+        },
+        "places": {
+            "Bellevue": {
+                "placeCode": "5305210",
+                "placeCode2": "02409821",
+                "location": {
+                    "lat": 47.597837,
+                    "lon": -122.15648
+                }
+            },
+            "Newcastle": {
+                "placeCode": "5348645",
+                "placeCode2": "02411243",
+                "location": {
+                    "lat": 47.531664,
+                    "lon": -122.165566
+                }
+            }
+        }
+    }
+}
+```
+# 
+
+## Get a city info including all cities with the same name in different states, city zip code and location: 
+/api/getInfo?city={city name}
+
+queries:
+* city: type str
+
+example:
+[https://zipcodedistance.herokuapp.com/api/getInfo?city=lakemont](https://zipcodedistance.herokuapp.com/api/getInfo?city=lakemont)
+
+
+you will get a JSON object:
+
+# 
+```javascript
+{
+    "message": "completed your request",
+        "data": [
+            {
+                "lat": 40.465434,
+                "lon": -78.391752,
+                "state": {
+                    "code": "42",
+                    "short": "PA"
+                },
+                "zipCode": "16602"
+            },
+            {
+                "lat": 40.465434,
+                "lon": -78.391752,
+                "state": {
+                    "code": "42",
+                    "short": "PA"
+                },
+                "zipCode": "16648"
+            }
+        ]
+}
+```
 # 
 
 # todo:
-* add city names for zipcodes in response
+* add city names for zipcodes in response - completed 08/24/2020
 * get distance from city names
 * add international functionality
-* add not found zipcodes
+* add not found zipcodes - completed 08/22/2020
 * add a bug tracker
 * add UI
 
