@@ -8,7 +8,7 @@ const readline = require('readline');
 const { allCityData } = require('./allCityData');
 
 // //import prefill allzipcodes file generic
-let zipCodeGeneric = require('../allZipCodes').zipCodes;
+let zipCodeGeneric = require('./allZipCodes').zipCodes;
 zipCodeGeneric = JSON.parse(zipCodeGeneric);
 
 // //import existing file
@@ -194,4 +194,6 @@ async function makeCityDataFile() {
 //rawToZipCodewithCityCodes();
 //rawToZipCodeWithCityNames();
 //makeCityDataFile();
+
+
 
