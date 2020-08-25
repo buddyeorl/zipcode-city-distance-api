@@ -112,8 +112,8 @@ you will get a JSON object:
     "distance": 2710.6371929140273
 }
 ```
-## Get the distance between two cities: 
-/api/getDistance/city&city1={city1 name}&city2={city 2}&unit={M}
+## Get the distance between cities: 
+/api/getDistance/city&city1={city1 name}&city2={city2 name}&unit={M}
 
 queries:
 * city1: type str
@@ -130,7 +130,7 @@ example:
 you will get an Array of results, cities cover several zipcodes and the api will calculate the distance between each zipcode in the city and return an array of objects with the distances calculated.
 
 
-## Get a zip code info including cities covered by that zipcode: 
+## Get zip code info including cities covered by that zipcode: 
 /api/getInfo?zipcode={zipcode}
 
 queries:
@@ -180,7 +180,7 @@ you will get a JSON object:
 ```
 # 
 
-## Get a city info including all cities with the same name in different states, city zip code and location: 
+## Get city info including all cities with the same name in different states, city zip code and location: 
 /api/getInfo?city={city name}
 
 queries:
