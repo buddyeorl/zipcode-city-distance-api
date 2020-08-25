@@ -112,6 +112,24 @@ you will get a JSON object:
     "distance": 2710.6371929140273
 }
 ```
+## Get the distance between two cities: 
+/api/getDistance/city&city1={city1 name}&city2={city 2}&unit={M}
+
+queries:
+* city1: type str
+* city2: type str
+* unit: type char
+
+** valid units are M for miles, K for kilometer, N for nautical, if unit doesn't match any of the options it will calculate distance in miles as default
+
+# 
+
+example:
+[https://zipcodedistance.herokuapp.com/api/getDistance/city?city1=miami&city2=bellevue&unit=M](https://zipcodedistance.herokuapp.com/api/getDistance/city?city1=miami&city2=bellevue&unit=M)
+
+you will get an Array of results, cities cover several zipcodes and the api will calculate the distance between each zipcode in the city and return an array of objects with the distances calculated.
+
+
 ## Get a zip code info including cities covered by that zipcode: 
 /api/getInfo?zipcode={zipcode}
 
@@ -204,9 +222,11 @@ you will get a JSON object:
 
 # todo:
 * add city names for zipcodes in response - completed 08/24/2020
-* get distance from city names
+* get distance between two cities, with no state query - completed 08/25/2020
+* get the distance between two cities including state query
 * add international functionality
-* add not found zipcodes - completed 08/22/2020
+* add not found zipcodes error- completed 08/22/2020
+* add not found city error- completed 08/25/2020
 * add a bug tracker
 * add UI
 
