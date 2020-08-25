@@ -1,4 +1,4 @@
-# zip code distance
+# Zip code / City distance - Zip code / City info
 A simple free API to calculate distance between zip codes or cities, get city information(including its coordinates, zipcodes etc) or information about zipcodes (including cities inside, coordinates, etc)
 
 ## Get the distance between zipcodes: 
