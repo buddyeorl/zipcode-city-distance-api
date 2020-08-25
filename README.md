@@ -118,16 +118,22 @@ you will get a JSON object:
 queries:
 * city1: type str
 * city2: type str
+* state1: type str - optional (at the moment only states no case sensitive abbreviations are accepted, e.g: CA,Ca,ca, FL, fl, Fl,pr, PR etc, )
+* state2: type str - optional (at the moment only states no case sensitive abbreviations are accepted, e.g: CA,Ca,ca, FL, fl, Fl,pr, PR etc, )
 * unit: type char
 
 ** valid units are M for miles, K for kilometer, N for nautical, if unit doesn't match any of the options it will calculate distance in miles as default
-
+** if no state is provided, an array of results will be returned showing all distances between the zipcodes the given cities cover, including state information.
+** 
 # 
 
-example:
+example without state query:
 [https://zipcodedistance.herokuapp.com/api/getDistance/city?city1=miami&city2=bellevue&unit=M](https://zipcodedistance.herokuapp.com/api/getDistance/city?city1=miami&city2=bellevue&unit=M)
 
-you will get an Array of results, cities cover several zipcodes and the api will calculate the distance between each zipcode in the city and return an array of objects with the distances calculated.
+example with state query:
+[https://zipcodedistance.herokuapp.com/api/getDistance/city?city1=miami&state1=fl&city2=bellevue&state2=WA&unit=M](https://zipcodedistance.herokuapp.com/api/getDistance/city?city1=miami&state1=fl&city2=bellevue&state2=WA&unit=M)
+
+you will get an Array of results,remember cities cover several zipcodes and the api will calculate the distance between each zipcode in the city and return an array of objects with the distances calculated.
 
 
 ## Get zip code info including cities covered by that zipcode: 
@@ -223,7 +229,8 @@ you will get a JSON object:
 # todo:
 * add city names for zipcodes in response - completed 08/24/2020
 * get distance between two cities, with no state query - completed 08/25/2020
-* get the distance between two cities including state query
+* get the distance between two cities including state query - completed 08/25/2020
+* get the distance between two cities as per their lat and lon and not by their zipcode
 * add international functionality
 * add not found zipcodes error- completed 08/22/2020
 * add not found city error- completed 08/25/2020
