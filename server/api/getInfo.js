@@ -6,11 +6,9 @@ router.use(bodyParser.json());
 
 // importing zipCode data file
 let zipCodes = require('../helper/allZipCodesFilesWithCityNames').allZipCodesFilesWithCityNames;
-zipCodes = JSON.parse(zipCodes);
 
 // importing zipCode data file
 let cities = require('../helper/allCityData').allCityData;
-cities = JSON.parse(cities);
 
 
 //get the zipcode or city info

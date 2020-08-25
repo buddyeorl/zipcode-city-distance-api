@@ -9,15 +9,12 @@ const { allCityData } = require('./allCityData');
 
 // //import prefill allzipcodes file generic
 let zipCodeGeneric = require('./allZipCodes').zipCodes;
-zipCodeGeneric = JSON.parse(zipCodeGeneric);
 
 // //import existing file
 let zipCodeFiles = require('./allZipCodes2010with2019cities').allZipCodes2010with2019cities;
-zipCodeFiles = JSON.parse(zipCodeFiles);
 
 //import file with city names 
 let cityFiles = require('./allZipCodesFilesWithCityNames').allZipCodesFilesWithCityNames;
-cityFiles = JSON.parse(cityFiles);
 
 let zipCodes = {}
 let zipCodeWithCityNames = {}
@@ -196,26 +193,3 @@ async function makeCityDataFile() {
 //makeCityDataFile();
 
 
-{
-    "message": "completed your request",
-        "data": [
-            {
-                "lat": 40.465434,
-                "lon": -78.391752,
-                "state": {
-                    "code": "42",
-                    "short": "PA"
-                },
-                "zipCode": "16602"
-            },
-            {
-                "lat": 40.465434,
-                "lon": -78.391752,
-                "state": {
-                    "code": "42",
-                    "short": "PA"
-                },
-                "zipCode": "16648"
-            }
-        ]
-}
