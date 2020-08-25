@@ -1,5 +1,5 @@
 # zip code distance
-A simple free no restrictions nodejs app to calculate the distance between zip codes
+A simple free API to calculate distance between zip codes or cities, get city information(including its coordinates, zipcodes etc) or information about zipcodes (including cities inside, coordinates, etc)
 
 ## Get the distance between zipcodes: 
 /api/getDistance/zipcode&zipcode1={zipcode}&zipcode2={zipcode}&unit={M}
