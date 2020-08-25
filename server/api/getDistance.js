@@ -15,24 +15,7 @@ cities = JSON.parse(cities);
 // importing calculate distance function
 const calculateDistance = require('../helper/calculateDistance').calculateDistance;
 
-router.get('/zipcode', (req, res) => {
-    console.log('zipcode test')
-    console.log(req.query)
-    console.log(zipCodes[req.query.zipcode1]);
-    if (req.query && req.query.zipcode1 && req.query.zipcode2 && req.query.unit && zipCodes[req.query.zipcode1] && zipCodes[req.query.zipcode2]) {
-        res.send({
-            message: 'completed your request',
-            zipcode1: zipCodes[req.query.zipcode1],
-            zipcode2: zipCodes[req.query.zipcode2],
-            distance: calculateDistance(zipCodes[req.query.zipcode1].location, zipCodes[req.query.zipcode2].location, req.query.unit)
-        })
-    } else {
-        res.send({ error: 'not valid query or zip code not found' })
-    }
-
-});
-
-
+//get distances between cities
 const getAllCityDistances = (req, res, next) => {
     let results = [];
     //city1 and city2 will be standarized before being used
@@ -119,6 +102,7 @@ const getAllCityDistances = (req, res, next) => {
     return;
 }
 
+//get distance by city name
 router.get('/city', getAllCityDistances, (req, res) => {
     console.log('success getting distances')
     res.send({
@@ -126,6 +110,24 @@ router.get('/city', getAllCityDistances, (req, res) => {
         results: req.locals
     })
 
+
+});
+
+// get distance by zipcode
+router.get('/zipcode', (req, res) => {
+    console.log('zipcode test')
+    console.log(req.query)
+    console.log(zipCodes[req.query.zipcode1]);
+    if (req.query && req.query.zipcode1 && req.query.zipcode2 && req.query.unit && zipCodes[req.query.zipcode1] && zipCodes[req.query.zipcode2]) {
+        res.send({
+            message: 'completed your request',
+            zipcode1: zipCodes[req.query.zipcode1],
+            zipcode2: zipCodes[req.query.zipcode2],
+            distance: calculateDistance(zipCodes[req.query.zipcode1].location, zipCodes[req.query.zipcode2].location, req.query.unit)
+        })
+    } else {
+        res.send({ error: 'not valid query or zip code not found' })
+    }
 
 });
 

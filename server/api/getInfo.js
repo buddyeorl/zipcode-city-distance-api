@@ -13,6 +13,7 @@ let cities = require('../helper/allCityData').allCityData;
 cities = JSON.parse(cities);
 
 
+//get the zipcode or city info
 router.get('/', (req, res) => {
     console.log('getinfo test')
     console.log(req.query)
