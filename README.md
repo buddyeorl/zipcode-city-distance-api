@@ -194,9 +194,8 @@ example:
     }
 }
 ```
-# 
 
-## City Info: 
+### City Info: 
 
 ```
 /api/getInfo?city={city name}
@@ -237,7 +236,7 @@ example:
 }
 ```
 
-## Zip Code Radius: 
+### Zip Code Radius: 
 Get all zipcodes within a radius of this zipcode in ascending order.
 
 ```
@@ -249,6 +248,9 @@ limit:float - maximum distance between given zipcodes and results
 unit:char - 'M' for miles, 'K' for kilometers and 'N' for nautic miles
 
 ```
+
+example:
+[https://zipcodedistance.herokuapp.com/api/getRadius?zipcode=98006&limit=5&unit=M](https://zipcodedistance.herokuapp.com/api/getRadius?zipcode=98006&limit=5&unit=M)
 
 ```javascript
 //result
