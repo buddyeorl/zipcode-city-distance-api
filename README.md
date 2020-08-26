@@ -1,24 +1,28 @@
-# Zip code / City distance - Zip code / City info
-A simple free API to calculate distance between zip codes or cities, get city information(including its coordinates, zipcodes etc) or information about zipcodes (including cities inside, coordinates, etc)
+# US Zip Codes / Cities
 
-## Get the distance between zipcodes: 
+Simple,Free, Opensource API for all US Zip Codes and Cities, get the distance between Zip Codes or Cities, get relevant information such as coordinates, cities within Zip Codes, Zip Codes covered by cities, states etc, get all the Zip Codes within certain radius and more.
+
+### Zip Code to Zip Code Distance: 
+
+```
+
 /api/getDistance/zipcode&zipcode1={zipcode}&zipcode2={zipcode}&unit={M}
 
 queries:
-* zipcode1: type str
-* zipcode2: type str
-* unit: type char
+zipcode1: type str
+zipcode2: type str
+unit: type char
+
+```
 
 ** valid units are M for miles, K for kilometer, N for nautical, if unit doesn't match any of the options it will calculate distance in miles as default
-
-# 
 
 example:
 [https://zipcodedistance.herokuapp.com/api/getDistance/zipcode?zipcode1=98006&zipcode2=33014&unit=M](https://zipcodedistance.herokuapp.com/api/getDistance/zipcode?zipcode1=98006&zipcode2=33014&unit=M)
 
 
-you will get a JSON object:
 ```javascript
+//result
 {
     "message": "completed your request",
     "zipcode1": {
@@ -112,20 +116,22 @@ you will get a JSON object:
     "distance": 2710.6371929140273
 }
 ```
-## Get the distance between cities: 
+### City to City distance: 
+
+```
+
 /api/getDistance/city&city1={city1 name}&city2={city2 name}&unit={M}
 
 queries:
-* city1: type str
-* city2: type str
-* state1: type str - optional (at the moment only states no case sensitive abbreviations are accepted, e.g: CA,Ca,ca, FL, fl, Fl,pr, PR etc, )
-* state2: type str - optional (at the moment only states no case sensitive abbreviations are accepted, e.g: CA,Ca,ca, FL, fl, Fl,pr, PR etc, )
-* unit: type char
+city1: type str
+city2: type str
+state1: type str - optional (at the moment only states no case sensitive abbreviations are accepted, e.g: CA,Ca,ca, FL, fl, Fl,pr, PR etc, )
+state2: type str - optional (at the moment only states no case sensitive abbreviations are accepted, e.g: CA,Ca,ca, FL, fl, Fl,pr, PR etc, )
+unit: type char
 
+```
 ** valid units are M for miles, K for kilometer, N for nautical, if unit doesn't match any of the options it will calculate distance in miles as default
 ** if no state is provided, an array of results will be returned showing all distances between the zipcodes the given cities cover, including state information.
-** 
-# 
 
 example without state query:
 [https://zipcodedistance.herokuapp.com/api/getDistance/city?city1=miami&city2=bellevue&unit=M](https://zipcodedistance.herokuapp.com/api/getDistance/city?city1=miami&city2=bellevue&unit=M)
@@ -133,21 +139,25 @@ example without state query:
 example with state query:
 [https://zipcodedistance.herokuapp.com/api/getDistance/city?city1=miami&state1=fl&city2=bellevue&state2=WA&unit=M](https://zipcodedistance.herokuapp.com/api/getDistance/city?city1=miami&state1=fl&city2=bellevue&state2=WA&unit=M)
 
-you will get an Array of results,remember cities cover several zipcodes and the api will calculate the distance between each zipcode in the city and return an array of objects with the distances calculated.
+Result will be an Array of objects,remember cities cover several zipcodes and the api will calculate the distance between each zipcode in the city and return an array of objects with the distances calculated.
 
 
-## Get zip code info including cities covered by that zipcode: 
+### Zip Code Info: 
+
+```
 /api/getInfo?zipcode={zipcode}
 
 queries:
-* zipcode: type str
+zipcode: type str
+
+```
 
 example:
 [https://zipcodedistance.herokuapp.com/api/getInfo?zipcode=98006](https://zipcodedistance.herokuapp.com/api/getInfo?zipcode=98006)
 
 
-you will get a JSON object:
 ```javascript
+//result
 {
     "message": "completed your request",
         "data": {
@@ -186,20 +196,22 @@ you will get a JSON object:
 ```
 # 
 
-## Get city info including all cities with the same name in different states, city zip code and location: 
+## City Info: 
+
+```
 /api/getInfo?city={city name}
 
 queries:
-* city: type str
+city: type str
+
+```
 
 example:
 [https://zipcodedistance.herokuapp.com/api/getInfo?city=lakemont](https://zipcodedistance.herokuapp.com/api/getInfo?city=lakemont)
 
 
-you will get a JSON object:
-
-# 
 ```javascript
+//result
 {
     "message": "completed your request",
         "data": [
@@ -224,17 +236,66 @@ you will get a JSON object:
         ]
 }
 ```
-# 
 
-# todo:
-* add city names for zipcodes in response - completed 08/24/2020
-* get distance between two cities, with no state query - completed 08/25/2020
-* get the distance between two cities including state query - completed 08/25/2020
-* get the distance between two cities as per their lat and lon and not by their zipcode
-* add radius functionality for zipcodes or cities
+## Zip Code Radius: 
+Get all zipcodes within a radius of this zipcode in ascending order.
+
+```
+/api/getRadius?zipcode={zipcode}&limit={limit radius}&unit={limit unit}
+
+queries:
+zipcode:str - zipcode
+limit:float - maximum distance between given zipcodes and results
+unit:char - 'M' for miles, 'K' for kilometers and 'N' for nautic miles
+
+```
+
+```javascript
+//result
+{
+    "message": "completed your request",
+    "data": [
+        {
+            "zipcode": "98056",
+            "distance": 3.613853931442833
+        },
+        {
+            "zipcode": "98040",
+            "distance": 3.765403793043263
+        },
+        {
+            "zipcode": "98007",
+            "distance": 3.89502983948142
+        },
+        {
+            "zipcode": "98005",
+            "distance": 4.018115501775772
+        },
+        {
+            "zipcode": "98008",
+            "distance": 4.099796739847524
+        },
+        {
+            "zipcode": "98059",
+            "distance": 4.449603369443228
+        },
+        {
+            "zipcode": "98004",
+            "distance": 4.899415818312604
+        }
+        ]
+}
+```
+
+
+### todo:
+* get the distance between two cities by lat and lon and not by their zipcode.
+* add radius functionality for cities
 * add international functionality
-* add not found zipcodes error- completed 08/22/2020
-* add not found city error- completed 08/25/2020
 * add a bug tracker
 * add UI
 
+
+Don't like the API?, want to run this locally? check the npm zipcode-city-distance package here:
+
+[https://github.com/buddyeorl/zipcode-city-distance-pkg](https://github.com/buddyeorl/zipcode-city-distance-pkg)
