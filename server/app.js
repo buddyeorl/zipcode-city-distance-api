@@ -4,8 +4,16 @@ const express = require('express');
 //body parser
 const bodyParser = require('body-parser');
 
+//CORS
+var cors = require('cors')
+
 //initialize express server app
 const app = express();
+
+//cors middleware
+app.use(cors());
+
+
 
 //set port for server
 app.set('port', (process.env.PORT || 3002));
